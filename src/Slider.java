@@ -16,7 +16,7 @@ public class Slider extends Note{
      * Constructor
      */
     public Slider(int px, int width, int courtWidth, int courtHeight) {
-        super(0, 0, 0);
+        super(null, 0, 0, 0);
     }
 
 }

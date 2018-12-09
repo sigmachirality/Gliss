@@ -19,24 +19,11 @@ public class Game implements Runnable {
         final JFrame frame = new JFrame("Gliss");
         frame.setLocation(0, 0);
 
-        AudioManager a = new AudioManager();
+        Audio a = new Audio();
 
         // Main playing area
         final GameCourt court = new GameCourt(a);
         frame.add(court, BorderLayout.CENTER);
-
-        /*// Note here that when we add an action listener to the reset button, we define it as an
-        // anonymous inner class that is an instance of ActionListener with its actionPerformed()
-        // method overridden. When the button is pressed, actionPerformed() will be called.
-        final JButton reset = new JButton("Reset");
-        reset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                court.reset();
-            }
-        });
-        control_panel.add(reset);*/
-
-        // Put the frame on the screen
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -45,10 +32,8 @@ public class Game implements Runnable {
         court.play();
     }
 
-    /**
-     * Main method run to start/run the game. Initializes the GUI elements specified in Game and runs it.
-     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Game());
     }
+
 }
