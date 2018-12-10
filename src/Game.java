@@ -7,7 +7,9 @@
 // imports necessary libraries for Java swing
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import javax.swing.*;
+import javax.sound.sampled.*;
 
 /**
  * Game Main class that specifies the frame and widgets of the GUI
@@ -27,6 +29,17 @@ public class Game implements Runnable {
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
+        //Setup sound and level
+        Clip mainClip;
+        try{
+            //mainClip = a.addClip("maps/" + "track.WAV");
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+
 
         // Start game
         court.play();

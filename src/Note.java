@@ -30,9 +30,9 @@ public class Note{
 
     public int scoreNote(){
         long offset = Math.abs(mainTrack.getMicrosecondPosition() - timePos);
-        if (offset <= 31.5) return 300;
-        if (offset <= 75.5) return 100;
-        if (offset <= 119.5) return 50;
+        if (offset <= 31500) return 300;
+        if (offset <= 75500) return 100;
+        if (offset <= 119500) return 50;
         return 0;
     }
 
@@ -42,9 +42,15 @@ public class Note{
 
     //TODO: Scale y position dynamically based on where shit be going down boi
     public void draw(Graphics g) {
-        int offset = (int) Math.abs(mainTrack.getMicrosecondPosition() - timePos);
+        int offset = (int)(timePos - mainTrack.getMicrosecondPosition());
         int contextHeight = g.getClipBounds().height;
         g.setColor(Color.WHITE);
-        g.fillRect(xPos, offset/600, width, (int) Math.round(contextHeight*.025));
+        double slope = -contextHeight / 1000000.0;
+        int yPos = contextHeight + (int)(slope * offset);
+        g.fillRect(xPos, yPos, width, (int) Math.round(contextHeight*.025));
+    }
+
+    public String toString(){
+        return "" + timePos;
     }
 }

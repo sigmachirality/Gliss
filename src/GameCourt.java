@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.io.*;
 import javax.sound.sampled.*;
 import java.awt.event.*;
+import java.awt.image.*;
 
 @SuppressWarnings("serial")
 public class GameCourt extends JPanel {
@@ -16,10 +17,13 @@ public class GameCourt extends JPanel {
     private Clip mainClip;
     private volatile long gameTime;
 
-    private Note n;
+    private Level level;
+
+    //Double buffering
 
     public GameCourt(Audio a) {
         this.a = a;
+        this.level = null;
         try {
             a.addClip(mapFolder + "track.WAV");
             a.addClip(assetsFolder + "sound-start.wav");
@@ -28,6 +32,8 @@ public class GameCourt extends JPanel {
             System.out.println("IOException: " + e);
         } catch (UnsupportedAudioFileException e) {
             System.out.println("Unsupported Audio File: " + e);
+        } catch (Exception e){
+            System.out.println(e);
         }
     }
 
@@ -35,13 +41,15 @@ public class GameCourt extends JPanel {
         // creates border around the court area, and sets play area background to black
         setBackground(Color.BLACK);
 
+
         try{
             mainClip = a.playSound(0);
-        } catch (LineUnavailableException e) {
-            System.out.println("Line unavailable: " + e);
-        }
+        } catch (Exception e){}
 
-        Timer timer = new Timer(10, new ActionListener() {
+        File f = new File("maps/" + "rawnotes.txt");
+        level = new Level(f, mainClip);
+
+        Timer timer = new Timer(0, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 tick();
             }
@@ -59,7 +67,6 @@ public class GameCourt extends JPanel {
                 if (e.getKeyCode() == KeyEvent.VK_A) {
                     try{
                         a.playSound(1);
-                        System.out.println(mainClip.getMicrosecondPosition());
                     } catch (LineUnavailableException ex){
                         System.out.println("Line unavailable: " + ex);
                     }
@@ -76,7 +83,6 @@ public class GameCourt extends JPanel {
             }
         });
 
-        n = new Note(mainClip, 800, 0, 100);
     }
 
     void tick() {
@@ -86,8 +92,16 @@ public class GameCourt extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        n.draw(g);
+        Graphics bg;
+        Dimension dim = getSize();
+        BufferedImage renderFrame = new BufferedImage(dim.width, dim.height, 2);
+        bg = renderFrame.getGraphics();
+        bg.clearRect(0, 0, dim.width, dim.height);
+        bg.setColor(Color.BLACK);
+        bg.setClip(0,0,dim.width, dim.height);
+        super.paintComponent(bg);
+        level.draw(bg, mainClip.getMicrosecondPosition());
+        g.drawImage(renderFrame,0,0,this);
     }
 
     @Override

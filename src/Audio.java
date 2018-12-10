@@ -11,7 +11,7 @@ public class Audio {
     private Vector infos;
     private Vector audios;
     private int num = 0;
-    private Clip mainTrack = null;
+    private Clip mainTrack;
 
     public Audio()
     {
@@ -60,6 +60,7 @@ public class Audio {
             clip.start();
 
             if (x == 0) mainTrack = clip;
+            System.out.println("" + x);
             return clip;
         }
     }
