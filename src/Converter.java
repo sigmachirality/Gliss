@@ -17,9 +17,10 @@ public class Converter {
                 int xPos = Integer.parseInt(str[0]);
 
                 int timePos = Integer.parseInt(str[2]);
+                timePos = timePos * 1000;
                 xPos = (int) Math.round(1280 * (xPos/ 512.0));
 
-                bw.write("" + timePos + "," + xPos);
+                bw.write("N," + timePos + "," + xPos + ",100");
                 bw.newLine();
 
                 s = br.readLine();

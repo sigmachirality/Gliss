@@ -15,11 +15,8 @@ public class GameCourt extends JPanel {
     //Local state
     private Audio a;
     private Clip mainClip;
-    private volatile long gameTime;
-
     private Level level;
-
-    //Double buffering
+    private Keyboard keyboard;
 
     public GameCourt(Audio a) {
         this.a = a;
@@ -35,19 +32,18 @@ public class GameCourt extends JPanel {
         } catch (Exception e){
             System.out.println(e);
         }
+        keyboard = new Keyboard();
     }
 
     public void play() {
         // creates border around the court area, and sets play area background to black
         setBackground(Color.BLACK);
-
-
         try{
             mainClip = a.playSound(0);
         } catch (Exception e){}
 
         File f = new File("maps/" + "rawnotes.txt");
-        level = new Level(f, mainClip);
+        level = new Level(f, mainClip, a, keyboard);
 
         Timer timer = new Timer(0, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -61,46 +57,33 @@ public class GameCourt extends JPanel {
         setFocusable(true);
 
         // Key listener
-        addKeyListener(new KeyAdapter() {
-
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_A) {
-                    try{
-                        a.playSound(1);
-                    } catch (LineUnavailableException ex){
-                        System.out.println("Line unavailable: " + ex);
-                    }
-                }
-            }
-
-            public void keyReleased(KeyEvent e) {
-                try{
-                    a.playSound(2);
-                    System.out.println(mainClip.getMicrosecondPosition());
-                } catch (LineUnavailableException ex){
-                    System.out.println("Line unavailable: " + ex);
-                }
-            }
-        });
+        addKeyListener(keyboard);
 
     }
 
     void tick() {
-        gameTime = mainClip.getMicrosecondPosition();
         repaint();
     }
 
     @Override
     public void paintComponent(Graphics g) {
+        //Double buffering
         Graphics bg;
         Dimension dim = getSize();
         BufferedImage renderFrame = new BufferedImage(dim.width, dim.height, 2);
+
+        //Setup image
         bg = renderFrame.getGraphics();
         bg.clearRect(0, 0, dim.width, dim.height);
         bg.setColor(Color.BLACK);
         bg.setClip(0,0,dim.width, dim.height);
+
+        //Draw components
         super.paintComponent(bg);
         level.draw(bg, mainClip.getMicrosecondPosition());
+        keyboard.draw(bg);
+
+        //Render image
         g.drawImage(renderFrame,0,0,this);
     }
 

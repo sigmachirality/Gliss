@@ -2,20 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7257a2ed-96a9-4dee-b872-56e03ae0f567" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gliss/Audio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/Audio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gliss/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/rawnotes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/rawnotes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Gliss/GameCourt$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/GameCourt$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gliss/GameCourt$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/GameCourt$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gliss/GameCourt$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Gliss/GameCourt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/GameCourt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gliss/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gliss/Level.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gliss/Note.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gliss/Note.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gliss/Slider.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Converter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameCourt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameCourt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slider.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,82 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-                <element signature="e#1306#1307#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GameCourt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
-                <element signature="e#1390#1391#0" expanded="true" />
-                <element signature="e#3203#3204#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Level.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/PrintStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="850" column="7" lean-forward="true" selection-start-line="850" selection-start-column="7" selection-end-line="850" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Audio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Note.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Note#0;class#Note#0" />
-                <element signature="e#1427#1428#0" expanded="true" />
-                <element signature="e#1461#1462#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,12 +44,14 @@
       <find>loadStream</find>
       <find>repaint</find>
       <find>OOPSIE</find>
-      <find>level</find>
       <find>playSound</find>
       <find>playSOUND</find>
       <find>playSound(0)</find>
       <find>play</find>
       <find>a.playSound</find>
+      <find>timer</find>
+      <find>keyListener</find>
+      <find>level</find>
       <find>Clip.start</find>
     </findStrings>
   </component>
@@ -135,15 +64,16 @@
         <option value="$PROJECT_DIR$/src/GameObj.java" />
         <option value="$PROJECT_DIR$/src/Square.java" />
         <option value="$PROJECT_DIR$/src/Poison.java" />
-        <option value="$PROJECT_DIR$/src/Slider.java" />
         <option value="$PROJECT_DIR$/src/AudioManager.java" />
         <option value="$PROJECT_DIR$/src/Keymap.java" />
-        <option value="$PROJECT_DIR$/src/Converter.java" />
-        <option value="$PROJECT_DIR$/src/Level.java" />
-        <option value="$PROJECT_DIR$/src/Audio.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/Note.java" />
+        <option value="$PROJECT_DIR$/src/Converter.java" />
+        <option value="$PROJECT_DIR$/src/Audio.java" />
         <option value="$PROJECT_DIR$/src/GameCourt.java" />
+        <option value="$PROJECT_DIR$/src/Note.java" />
+        <option value="$PROJECT_DIR$/src/Slider.java" />
+        <option value="$PROJECT_DIR$/src/Keyboard.java" />
+        <option value="$PROJECT_DIR$/src/Level.java" />
       </list>
     </option>
   </component>
@@ -186,7 +116,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544421971356" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544438064854" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -240,16 +170,15 @@
       <option name="presentableId" value="Default" />
       <updated>1544313979583</updated>
       <workItem from="1544313986278" duration="17674000" />
-      <workItem from="1544411810216" duration="10090000" />
+      <workItem from="1544411810216" duration="25465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27764000" />
+    <option name="totallyTimeSpent" value="43139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -331,31 +260,41 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Keymap.java" />
-    <entry file="file://$PROJECT_DIR$/src/Converter.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/PrintStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#101#928#0" />
-          </folding>
+        <state relative-caret-position="-1513">
+          <caret line="31" column="52" lean-forward="true" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Slider.java">
+    <entry file="file://$PROJECT_DIR$/src/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="119">
+          <caret line="7" column="46" lean-forward="true" selection-start-line="6" selection-start-column="55" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="68" column="58" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.desktop/java/awt/geom/Area.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5708">
+          <caret line="617" selection-start-line="617" selection-end-line="617" />
           <folding>
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#21943#21944#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="255">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1252#1253#0" expanded="true" />
@@ -364,52 +303,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameCourt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding>
+            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#2582#2583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="543" column="23" lean-forward="true" selection-start-line="543" selection-start-column="23" selection-end-line="543" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Note.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+        <state relative-caret-position="392">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Note#0;class#Note#0" />
-            <element signature="e#1427#1428#0" expanded="true" />
-            <element signature="e#1461#1462#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#1780#1781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816">
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+          <folding>
+            <element signature="method#getNotes#0;class#Level#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Audio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+        <state relative-caret-position="189">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="method#Audio#0;class#Audio#0" />
+            <element signature="method#addClip#0;class#Audio#0" />
+            <element signature="method#addClip#1;class#Audio#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/PrintStream.java">
+    <entry file="file://$PROJECT_DIR$/src/Slider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="850" column="7" lean-forward="true" selection-start-line="850" selection-start-column="7" selection-end-line="850" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="69">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameCourt.java">
+    <entry file="file://$PROJECT_DIR$/src/Keyboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="885">
+          <caret line="105" column="33" lean-forward="true" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#3203#3204#0" expanded="true" />
+            <element signature="e#257#266#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="method#keyReleased#0;class#Keyboard#0" />
           </folding>
         </state>
       </provider>

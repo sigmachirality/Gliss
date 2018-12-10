@@ -4,8 +4,10 @@
  * @version 2.1, Apr 2017
  */
 
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import javax.sound.sampled.Clip;
 
 /**
@@ -16,10 +18,12 @@ import javax.sound.sampled.Clip;
  */
 public class Note{
 
-    private long timePos;
-    private int xPos;
-    private int width;
-    private Clip mainTrack;
+    protected long timePos;
+    protected int xPos;
+    protected int width;
+    protected Clip mainTrack;
+    protected boolean played = false;
+    private boolean scored = false;
 
     public Note(Clip mainTrack, long timePos, int xPos, int width){
         this.mainTrack = mainTrack;
@@ -33,21 +37,30 @@ public class Note{
         if (offset <= 31500) return 300;
         if (offset <= 75500) return 100;
         if (offset <= 119500) return 50;
+        scored = true;
         return 0;
     }
 
-    protected boolean checkKeyPress(){
-        return false;
-    }
-
     //TODO: Scale y position dynamically based on where shit be going down boi
-    public void draw(Graphics g) {
+    public Shape draw(Graphics g, Audio a) {
         int offset = (int)(timePos - mainTrack.getMicrosecondPosition());
         int contextHeight = g.getClipBounds().height;
         g.setColor(Color.WHITE);
         double slope = -contextHeight / 1000000.0;
         int yPos = contextHeight + (int)(slope * offset);
+        Rectangle2D rect = new Rectangle(xPos, yPos, width, (int) Math.round(contextHeight*.025));
         g.fillRect(xPos, yPos, width, (int) Math.round(contextHeight*.025));
+
+        try {
+            if (yPos >= contextHeight && (!played)) {
+                a.playSound(1);
+                played = true;
+            }
+        } catch (LineUnavailableException e){
+            System.out.println(e);
+        }
+
+        return rect;
     }
 
     public String toString(){

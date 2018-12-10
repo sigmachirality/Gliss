@@ -60,7 +60,6 @@ public class Audio {
             clip.start();
 
             if (x == 0) mainTrack = clip;
-            System.out.println("" + x);
             return clip;
         }
     }
