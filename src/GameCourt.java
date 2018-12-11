@@ -42,7 +42,7 @@ public class GameCourt extends JPanel {
             mainClip = a.playSound(0);
         } catch (Exception e){}
 
-        File f = new File("maps/" + "rawnotes.txt");
+        File f = new File("maps/" + "notes.txt");
         level = new Level(f, mainClip, a, keyboard);
 
         Timer timer = new Timer(0, new ActionListener() {

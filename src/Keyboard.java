@@ -35,7 +35,8 @@ class Keyboard extends KeyAdapter {
     }
 
     public void draw(Graphics g) {
-        g.setColor(Color.YELLOW);
+        Color c=new Color(1f,1f,0f,.3f );
+        g.setColor(c);
         int indicatorHeight = (int) (0.05 * g.getClipBounds().height);
         int indicatorPos = (int) (0.95 * g.getClipBounds().height);
         int guardPos = (int) (0.85 * g.getClipBounds().height);

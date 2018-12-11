@@ -19,9 +19,10 @@ import java.awt.geom.Rectangle2D;
  */
 public class Slider extends Note{
 
-    long endTime;
-    int finalXPos;
-    boolean endPlayed = false;
+    private long endTime;
+    private int finalXPos;
+    private boolean endPlayed = false;
+    private long lastScoredTime = -1;
 
     public Slider(Clip mainTrack, long timePos, int xPos, int width, long endTime, int finalXPos){
         super(mainTrack, timePos, xPos, width);
@@ -43,6 +44,7 @@ public class Slider extends Note{
         int[] yPoints = {startYPos, startYPos, endYPos, endYPos};
 
         g.setColor(Color.CYAN);
+        if (scored) g.setColor(Color.GREEN);
         g.fillPolygon(xPoints, yPoints, 4);
 
         try {
@@ -57,6 +59,6 @@ public class Slider extends Note{
         } catch (LineUnavailableException e){
             System.out.println(e);
         }
-        return new Rectangle(0,0,0,0);
+        return new Polygon(xPoints, yPoints, 4);
     }
 }

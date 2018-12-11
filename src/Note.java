@@ -5,17 +5,10 @@
  */
 
 import javax.sound.sampled.LineUnavailableException;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import javax.sound.sampled.Clip;
 
-/**
- * An object in the game. 
- *
- * Game objects exist in the game court. They have a position, velocity, size and bounds. Their
- * velocity controls how they move; their position should always be within their bounds.
- */
 public class Note{
 
     protected long timePos;
@@ -23,7 +16,7 @@ public class Note{
     protected int width;
     protected Clip mainTrack;
     protected boolean played = false;
-    private boolean scored = false;
+    protected boolean scored = false;
 
     public Note(Clip mainTrack, long timePos, int xPos, int width){
         this.mainTrack = mainTrack;
@@ -33,23 +26,21 @@ public class Note{
     }
 
     public int scoreNote(){
-        long offset = Math.abs(mainTrack.getMicrosecondPosition() - timePos);
-        if (offset <= 31500) return 300;
-        if (offset <= 75500) return 100;
-        if (offset <= 119500) return 50;
         scored = true;
-        return 0;
+        return 10;
     }
 
-    //TODO: Scale y position dynamically based on where shit be going down boi
     public Shape draw(Graphics g, Audio a) {
-        int offset = (int)(timePos - mainTrack.getMicrosecondPosition());
         int contextHeight = g.getClipBounds().height;
         g.setColor(Color.WHITE);
-        double slope = -contextHeight / 1000000.0;
-        int yPos = contextHeight + (int)(slope * offset);
-        Rectangle2D rect = new Rectangle(xPos, yPos, width, (int) Math.round(contextHeight*.025));
-        g.fillRect(xPos, yPos, width, (int) Math.round(contextHeight*.025));
+        if (scored) g.setColor(Color.GREEN);
+        int yPos = getYPos(g);
+
+        Rectangle2D rect = new Rectangle(0,0,0,0);
+        if (yPos >= 0) {
+            rect = new Rectangle(xPos, yPos, width, (int) Math.round(contextHeight * .025));
+            g.fillRect(xPos, yPos, width, (int) Math.round(contextHeight * .025));
+        }
 
         try {
             if (yPos >= contextHeight && (!played)) {
@@ -65,5 +56,26 @@ public class Note{
 
     public String toString(){
         return "" + timePos;
+    }
+
+    private int getYPos(Graphics g){
+        int offset = (int)(timePos - mainTrack.getMicrosecondPosition());
+        int contextHeight = g.getClipBounds().height;
+        double slope = -contextHeight / 1000000.0;
+        int yPos = contextHeight + (int)(slope * offset);
+        return yPos;
+    }
+
+    public int getXPos(){
+        return xPos;
+    }
+
+    public boolean noteMissed(Graphics g){
+        return (getYPos(g) >= 1280) && (getYPos(g) <= 1400) && !scored;
+    }
+
+
+    public long getTimePos (){
+        return timePos;
     }
 }
