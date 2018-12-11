@@ -143,7 +143,7 @@ public class Level implements Runnable{
 
     public Map<Long, String> readWriteScores() {
         try{
-            File scoreFile = new File("maps/scores.txt");
+            File scoreFile = new File("files/maps/scores.txt");
             scoreFile.createNewFile();
             DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
             Map<Long, String> scores = new ConcurrentHashMap<Long, String>();
@@ -164,7 +164,7 @@ public class Level implements Runnable{
             br.close();
             fr.close();
 
-            FileWriter fw = new FileWriter("maps/scores.txt", true);
+            FileWriter fw = new FileWriter("files/maps/scores.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
 
             bw.write(dateFormat.format(new Date())+ "|" + score);

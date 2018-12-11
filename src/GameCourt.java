@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 public class GameCourt extends JPanel {
 
     //TODO: make folder dynamic
-    private String mapFolder = "maps/";
+    private String mapFolder = "files/maps/";
     private String assetsFolder = "files/";
 
     //Local state
@@ -48,7 +48,7 @@ public class GameCourt extends JPanel {
             mainClip = a.playSound(0);
         } catch (Exception e){}
 
-        File f = new File("maps/" + "notes.txt");
+        File f = new File(mapFolder + "notes.txt");
         level = new Level(f, mainClip, a, keyboard, d, this);
         level.run();
 
