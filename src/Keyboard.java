@@ -1,22 +1,30 @@
 import org.w3c.dom.css.Rect;
 
 import javax.sound.sampled.LineUnavailableException;
+import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.nio.Buffer;
 import java.security.Key;
+import java.util.Collection;
 import java.util.Set;
 import java.util.HashSet;
 import java.awt.geom.Area;
 
-class Keyboard extends KeyAdapter {
+class Keyboard extends KeyAdapter implements Runnable {
 
     private Area activeArea = new Area();
+    private Collection<BufferedImage> b;
+    private GameCourt g;
 
     private final Set<Integer> pressed = new HashSet<Integer>();
 
-    public Keyboard(){
+    public Keyboard(Collection<BufferedImage> b, GameCourt g){
         activeArea = new Area();
+        this.b = b;
+        this.g = g;
     }
 
     @Override
@@ -105,6 +113,21 @@ class Keyboard extends KeyAdapter {
         Area temp = (Area) n.clone();
         n.subtract(activeArea);
         return !(n.equals(temp));
+    }
+
+    @Override
+    public void run(){
+        Timer timer = new Timer(0, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Dimension d = g.getSize();
+                BufferedImage temp = new BufferedImage(d.width, d.height, 2);
+                Graphics bg = temp.getGraphics();
+                bg.setClip(0,0,d.width,d.height);
+                draw(bg);
+                b.add(temp);
+            }
+        });
+        timer.start();
     }
 
 }

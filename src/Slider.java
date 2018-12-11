@@ -1,15 +1,6 @@
-/**
- * CIS 120 Game HW
- * (c) University of Pennsylvania
- * @version 2.1, Apr 2017
- */
-
-import org.w3c.dom.css.Rect;
-
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
 /**
  * An object in the game. 
