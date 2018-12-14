@@ -45,7 +45,8 @@ public class GameCourt extends JPanel {
         // creates border around the court area, and sets play area background to black
         setBackground(Color.BLACK);
         try{
-            mainClip = a.playSound(0);
+            mainClip = a.getClip(0);
+            mainClip.start();
         } catch (Exception e){}
 
         File f = new File(mapFolder + "notes.txt");

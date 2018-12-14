@@ -1,13 +1,7 @@
-import org.w3c.dom.css.Rect;
-
-import javax.sound.sampled.LineUnavailableException;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.nio.Buffer;
-import java.security.Key;
 import java.util.Collection;
 import java.util.Set;
 import java.util.HashSet;
